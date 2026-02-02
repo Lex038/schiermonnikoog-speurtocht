@@ -19,8 +19,7 @@ background:radial-gradient(circle, red 0%, rgba(255,0,0,0.4) 40%, transparent 70
 box-shadow:0 0 20px 8px rgba(255,0,0,0.4);
 opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:pulse 4s infinite;}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
-#bus{position:fixed;bottom:40px;left:-200px;font-size:3rem;opacity:0;animation:busride 6s forwards;}
-@keyframes busride{0%{left:-200px;opacity:0}20%{opacity:1}100%{left:110%;opacity:0}}
+#bus{position:fixed;bottom:40px;left:-200px;font-size:3rem;opacity:0;animation:none;}
 </style>
 </head>
 <body>
@@ -29,24 +28,21 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 
 <div id="game">
 
+<!-- STAP 1: sterren direct invullen -->
 <div class="step active">
-<p>"We maken een puzzeltocht over Schiermonnikoog. We starten op het uiterste puntje van de Veerdam, waar de reis op Schiermonnikoog voor iedereen begint. Ook die van Google Streetview. Tel de verkeersborden die je op dit standpunt (dus nog niet lopen) van de achterkant ziet. Hoeveel zij het er? Neem deze buslijn tot aan zijn laatste halte. Stap hier uit en loop richting het dorp. Onderweg weg komt je een evenement tegen. Er staat een apparaat om kracht te meten."</p>
-<p>Let op: het aantal verkeersborden bepaalt de bus, **dit hoef je niet in te vullen**.</p>
-<button onclick="next()">Verder</button>
-</div>
-
-<div class="step">
-<p>"Hoeveel sterren op de achtergrond?"</p>
+<p>"We maken een puzzeltocht over Schiermonnikoog. We starten op het uiterste puntje van de Veerdam, waar de reis op Schiermonnikoog voor iedereen begint. Ook die van Google Streetview. Tel de verkeersborden die je op dit standpunt (dus nog niet lopen) van de achterkant ziet. Hoeveel zijn het er? Neem deze buslijn tot aan zijn laatste halte. Stap hier uit en loop richting het dorp. Onderweg weg komt je een evenement tegen. Er staat een apparaat om kracht te meten. Hoeveel sterren zie op de achtergrond?"</p>
 <input id="a" type="number" placeholder="Aantal sterren">
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 2: ganzen -->
 <div class="step">
 <p>"Vervolg je route. Bij de eerste keuzemogelijkheid ga je naar links. Op dit paadje kom je tot aan de volgende keuzemogelijkheid houten ganzen tegen. Het lijkt alsof er 1 is omgevallen, die tellen we uiteraard niet mee. Hoeveel kun je er zien?"</p>
 <input id="b" type="number" placeholder="Aantal ganzen">
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 3: vlaggen -->
 <div class="step">
 <p>"Vervolgens ga je bij de keuzemogelijkheid naar rechts en bij de volgende naar links. We lopen deze straat tot en met de volgende kruising met boekverkoper. Hoeveel keer zie je (een afbeelding van) de vlag van Schiermonnikoog?"</p>
 <input id="c" type="number" placeholder="Aantal vlaggen">
@@ -58,18 +54,21 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 4: mensen terras -->
 <div class="step">
 <p>"We teleporteren naar het terras van Wantij. Hoeveel mensen zitten daar op het terras?"</p>
 <input id="d" type="number" placeholder="Aantal mensen">
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 5: huisnummer klos -->
 <div class="step">
 <p>"Loop door richting het dorp. Ga bij de eerste mogelijkheid naar links. Ga niet voor de gele bus schuin rechts, maar rechtdoor en de eerste links. Op welk huisnummer is in deze staat iemand de klos?"</p>
 <input id="e" type="number" placeholder="Huisnummer klos">
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 6: huisnummer instrument -->
 <div class="step">
 <p>"We lopen deze straat uit. Dan slaan we linksaf en volgen deze straat tot het einde. Onderweg is een huis vernoemd naar een navigatieinstrument? Welk huisnummer?"</p>
 <input id="f" type="number" placeholder="Huisnummer instrument">
@@ -81,18 +80,21 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 7: vissen -->
 <div class="step">
 <p>"We gaan een visje eten bij Jan Keijzer. Hoeveel getekende vissen zie je op en rond de vishandel?"</p>
 <input id="g" type="number" placeholder="Aantal vissen">
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 8: decennia -->
 <div class="step">
 <p>"We lopen terug richting de oude school, maar buigen voortijdig af naar links. En lopen daar door tot we niet verder kunnen. Daar staat een auto. Al meer dan hoeveel jaar realiseert dit bedrijf bouwprojecten op maat? Geef het getal in decennia."</p>
 <input id="h" type="number" placeholder="Aantal decennia">
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 9: fietsen -->
 <div class="step">
 <p>"Gauw terug en linksaf de Badweg op. Weer komen langs een fietsverhuur. Hoeveel fietsen staan hier buiten voor de zaak? Het gaat om eigenlijk alle soorten, maar niet het karretje."</p>
 <input id="i" type="number" placeholder="Aantal fietsen">
@@ -104,26 +106,30 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 10: busnummer -->
 <div class="step">
 <p>"Nu gaan we einde Badweg het strand op. Blijkbaar kan dat ook. We slaan linksaf. Daar staat een bus. Welk nummer heeft de bus?"</p>
 <input id="j" type="number" placeholder="Busnummer">
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 11: huisnummer dochters -->
 <div class="step">
 <p>"Verbaasd dat er een bus op het strand staat draaien we ons gauw om. Terug de Badweg op richting het dorp. De eerste mogelijkheid naar rechts. Aan deze weg schijnen de dochters van Atlas en Pleione te wonen. Op welk nummer?"</p>
 <input id="k" type="number" placeholder="Huisnummer dochters">
 <button onclick="next()">Verder</button>
 </div>
 
+<!-- STAP 12: letters slogan -->
 <div class="step">
-<p>"Weer terug naar de Badweg. Op weg naar het dorp komen we een volwassen man met een rood visnetje en een blote bast op een fiets tegen. Hij heeft waarschijnlijk vakantie. Zijn vrouw is ook lekker aan het fietsen en heeft een boodschappentas van Plus bij zich. Welke slogan staat er op haar tas? Tel de letters bij elkaar op."</p>
+<p>"Weer terug naar de Badweg. Op weg naar het dorp komen we een volwassen man met een rood visnetje en een blote bast op een fiets tegen. Zijn vrouw is ook lekker aan het fietsen en heeft een boodschappentas van Plus bij zich. Welke slogan staat er op haar tas? Tel de letters bij elkaar op."</p>
 <input id="l" type="number" placeholder="Aantal letters">
 <button onclick="calc4()">Bereken vierde cijfer</button>
 </div>
 
 <div class="step">
 <div class="calc" id="calc4"></div>
+<button id="endBtn" style="display:none;" onclick="endGame()">Einde</button>
 </div>
 
 </div>
@@ -195,9 +201,14 @@ function calc4(){
   document.getElementById('calc4').innerHTML=
 `Ik tel ${j} (bus) en ${k} (huisnummer dochters) bij elkaar op en trek ${l} (letters slogan) eraf.<br>
 Dan krijg je <strong>${res}</strong>. Onthoud dit getal goed, dit is het vierde cijfer van de code.`;
-  document.getElementById('bus').style.opacity=1;
+  document.getElementById('endBtn').style.display='inline-block';
   moveEye(); moveEye();
-  next();
+}
+
+function endGame(){
+  const bus=document.getElementById('bus');
+  bus.style.opacity=1;
+  bus.style.animation='busride 6s forwards';
 }
 </script>
 
