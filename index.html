@@ -13,13 +13,17 @@ body{margin:0;font-family:'Trebuchet MS',sans-serif;background:#050505;color:#f5
 input{margin-top:1rem;padding:10px;width:100%;font-size:1rem;border-radius:8px;border:none;}
 button{margin-top:1rem;padding:10px 20px;background:#660000;color:#fff;border:none;border-radius:8px;cursor:pointer;}
 button:hover{background:#880000}
-.calc{margin-top:1rem;font-family:monospace;background:#111;padding:1rem;border-radius:8px;}
+.calc{margin-top:1rem;font-family:monospace;background:#111;padding:1rem;border-radius:8px;font-size:1.1rem;}
 #red-eye{position:fixed;width:26px;height:26px;border-radius:50%;
 background:radial-gradient(circle, red 0%, rgba(255,0,0,0.4) 40%, transparent 70%);
 box-shadow:0 0 20px 8px rgba(255,0,0,0.4);
 opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:pulse 4s infinite;}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
-#bus{position:fixed;bottom:40px;left:-200px;font-size:3rem;opacity:0;animation:none;}
+#bus{position:fixed;bottom:40px;left:-200px;font-size:3rem;opacity:1;}
+@keyframes busride {
+  0% { left: -200px; }
+  100% { left: 110%; }
+}
 </style>
 </head>
 <body>
@@ -213,7 +217,6 @@ Dan krijg je <strong>${res}</strong>. Onthoud dit getal goed, dit is het vierde 
 
 function endGame(){
   const bus=document.getElementById('bus');
-  bus.style.opacity=1;
   bus.style.animation='busride 6s forwards';
 }
 </script>
