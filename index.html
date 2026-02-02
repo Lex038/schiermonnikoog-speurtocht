@@ -30,7 +30,7 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 
 <!-- STAP 1: sterren direct invullen -->
 <div class="step active">
-<p>"We maken een puzzeltocht over Schiermonnikoog. We starten op het uiterste puntje van de Veerdam, waar de reis op Schiermonnikoog voor iedereen begint. Ook die van Google Streetview. Tel de verkeersborden die je op dit standpunt (dus nog niet lopen) van de achterkant ziet. Hoeveel zijn het er? Neem deze buslijn tot aan zijn laatste halte. Stap hier uit en loop richting het dorp. Onderweg weg komt je een evenement tegen. Er staat een apparaat om kracht te meten. Hoeveel sterren zie op de achtergrond?"</p>
+<p>"We maken een puzzeltocht over Schiermonnikoog. We starten op het uiterste puntje van de Veerdam, waar de reis op Schiermonnikoog voor iedereen begint. Ook die van Google Streetview. Tel de verkeersborden die je op dit standpunt (dus nog niet lopen) van de achterkant ziet. Hoeveel zij het er? Neem deze buslijn tot aan zijn laatste halte. Stap hier uit en loop richting het dorp. Onderweg weg komt je een evenement tegen. Er staat een apparaat om kracht te meten. Hoeveel sterren op de achtergrond?"</p>
 <input id="a" type="number" placeholder="Aantal sterren">
 <button onclick="next()">Verder</button>
 </div>
@@ -122,7 +122,7 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 
 <!-- STAP 12: letters slogan -->
 <div class="step">
-<p>"Weer terug naar de Badweg. Op weg naar het dorp komen we een volwassen man met een rood visnetje en een blote bast op een fiets tegen. Zijn vrouw is ook lekker aan het fietsen en heeft een boodschappentas van Plus bij zich. Welke slogan staat er op haar tas? Tel de letters bij elkaar op."</p>
+<p>"Weer terug naar de Badweg. Op weg naar het dorp komen we een volwassen man met een rood visnetje en een blote bast op een fiets tegen. Hij heeft waarschijnlijk vakantie. Zijn vrouw is ook lekker aan het fietsen en heeft een boodschappentas van Plus bij zich. Welke slogan staat er op haar tas? Tel de letters bij elkaar op."</p>
 <input id="l" type="number" placeholder="Aantal letters">
 <button onclick="calc4()">Bereken vierde cijfer</button>
 </div>
@@ -201,7 +201,13 @@ function calc4(){
   document.getElementById('calc4').innerHTML=
 `Ik tel ${j} (bus) en ${k} (huisnummer dochters) bij elkaar op en trek ${l} (letters slogan) eraf.<br>
 Dan krijg je <strong>${res}</strong>. Onthoud dit getal goed, dit is het vierde cijfer van de code.`;
+
+  // Toon Einde knop en activeer stap
   document.getElementById('endBtn').style.display='inline-block';
+  steps[step].classList.remove('active');
+  step++;
+  steps[step].classList.add('active');
+
   moveEye(); moveEye();
 }
 
