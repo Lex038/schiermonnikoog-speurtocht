@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schiermonnikoog – De Overtocht</title>
+<title>Schiermonnikoog Puzzeltocht</title>
 <style>
 body{margin:0;font-family:'Trebuchet MS',sans-serif;background:#050505;color:#f5f5f5;overflow:hidden;}
 #game{max-width:700px;margin:0 auto;padding:2rem;}
@@ -14,7 +14,6 @@ input{margin-top:1rem;padding:10px;width:100%;font-size:1rem;border-radius:8px;b
 button{margin-top:1rem;padding:10px 20px;background:#660000;color:#fff;border:none;border-radius:8px;cursor:pointer;}
 button:hover{background:#880000}
 .calc{margin-top:1rem;font-family:monospace;background:#111;padding:1rem;border-radius:8px;}
-#code{margin-top:2rem;font-size:1.2rem;letter-spacing:0.4rem;}
 #red-eye{position:fixed;width:26px;height:26px;border-radius:50%;
 background:radial-gradient(circle, red 0%, rgba(255,0,0,0.4) 40%, transparent 70%);
 box-shadow:0 0 20px 8px rgba(255,0,0,0.4);
@@ -29,28 +28,27 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 <div id="red-eye"></div>
 
 <div id="game">
-<h1>De Overtocht</h1>
 
 <div class="step active">
-<p>We starten op het uiterste puntje van de Veerdam. Tel de verkeersborden die je hier van de achterkant ziet.</p>
-<p>Dit aantal bepaalt welke buslijn je neemt. Stap in, maar vul nog niets in.</p>
+<p>"We maken een puzzeltocht over Schiermonnikoog. We starten op het uiterste puntje van de Veerdam, waar de reis op Schiermonnikoog voor iedereen begint. Ook die van Google Streetview. Tel de verkeersborden die je op dit standpunt (dus nog niet lopen) van de achterkant ziet. Hoeveel zij het er? Neem deze buslijn tot aan zijn laatste halte. Stap hier uit en loop richting het dorp. Onderweg weg komt je een evenement tegen. Er staat een apparaat om kracht te meten."</p>
+<p>Let op: het aantal verkeersborden bepaalt de bus, **dit hoef je niet in te vullen**.</p>
 <button onclick="next()">Verder</button>
 </div>
 
 <div class="step">
-<p>Je bent uitgestapt bij de laatste halte. Onderweg staat een apparaat om kracht te meten. Hoeveel sterren staan er op de achtergrond?</p>
-<input id="a" type="number">
+<p>"Hoeveel sterren op de achtergrond?"</p>
+<input id="a" type="number" placeholder="Aantal sterren">
 <button onclick="next()">Verder</button>
 </div>
 
 <div class="step">
-<p>Bij de eerste keuzemogelijkheid ga je naar links. Op het pad staan houten ganzen. Eentje is omgevallen en telt niet mee. Hoeveel zie je?</p>
-<input id="b" type="number">
+<p>"Vervolg je route. Bij de eerste keuzemogelijkheid ga je naar links. Op dit paadje kom je tot aan de volgende keuzemogelijkheid houten ganzen tegen. Het lijkt alsof er 1 is omgevallen, die tellen we uiteraard niet mee. Hoeveel kun je er zien?"</p>
+<input id="b" type="number" placeholder="Aantal ganzen">
 <button onclick="next()">Verder</button>
 </div>
 
 <div class="step">
-<p>Vervolgens ga je bij de keuzemogelijkheid naar rechts en bij de volgende naar links. We lopen deze straat tot en met de volgende kruising met boekverkoper. Hoeveel keer zie je (een afbeelding van) de vlag van Schiermonnikoog?</p>
+<p>"Vervolgens ga je bij de keuzemogelijkheid naar rechts en bij de volgende naar links. We lopen deze straat tot en met de volgende kruising met boekverkoper. Hoeveel keer zie je (een afbeelding van) de vlag van Schiermonnikoog?"</p>
 <input id="c" type="number" placeholder="Aantal vlaggen">
 <button onclick="calc1()">Bereken eerste cijfer</button>
 </div>
@@ -61,20 +59,20 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 </div>
 
 <div class="step">
-<p>We teleporteren naar het terras van Wantij. Hoeveel mensen zitten er op het terras?</p>
-<input id="d" type="number">
+<p>"We teleporteren naar het terras van Wantij. Hoeveel mensen zitten daar op het terras?"</p>
+<input id="d" type="number" placeholder="Aantal mensen">
 <button onclick="next()">Verder</button>
 </div>
 
 <div class="step">
-<p>Loop richting het dorp. Ga bij de eerste mogelijkheid naar links. Op welk huisnummer is iemand de klos?</p>
-<input id="e" type="number">
+<p>"Loop door richting het dorp. Ga bij de eerste mogelijkheid naar links. Ga niet voor de gele bus schuin rechts, maar rechtdoor en de eerste links. Op welk huisnummer is in deze staat iemand de klos?"</p>
+<input id="e" type="number" placeholder="Huisnummer klos">
 <button onclick="next()">Verder</button>
 </div>
 
 <div class="step">
-<p>Volg deze straat tot het einde. Een huis is vernoemd naar een navigatie-instrument. Welk huisnummer?</p>
-<input id="f" type="number">
+<p>"We lopen deze straat uit. Dan slaan we linksaf en volgen deze straat tot het einde. Onderweg is een huis vernoemd naar een navigatieinstrument? Welk huisnummer?"</p>
+<input id="f" type="number" placeholder="Huisnummer instrument">
 <button onclick="calc2()">Bereken tweede cijfer</button>
 </div>
 
@@ -84,20 +82,20 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 </div>
 
 <div class="step">
-<p>We gaan een visje eten bij Jan Keijzer. Hoeveel getekende vissen zie je?</p>
-<input id="g" type="number">
+<p>"We gaan een visje eten bij Jan Keijzer. Hoeveel getekende vissen zie je op en rond de vishandel?"</p>
+<input id="g" type="number" placeholder="Aantal vissen">
 <button onclick="next()">Verder</button>
 </div>
 
 <div class="step">
-<p>Bij de oude school staat een auto. Al meer dan hoeveel decennia realiseert dit bedrijf bouwprojecten?</p>
-<input id="h" type="number">
+<p>"We lopen terug richting de oude school, maar buigen voortijdig af naar links. En lopen daar door tot we niet verder kunnen. Daar staat een auto. Al meer dan hoeveel jaar realiseert dit bedrijf bouwprojecten op maat? Geef het getal in decennia."</p>
+<input id="h" type="number" placeholder="Aantal decennia">
 <button onclick="next()">Verder</button>
 </div>
 
 <div class="step">
-<p>Terug op de Badweg. Hoeveel fietsen staan er buiten bij de fietsverhuur (het karretje telt niet mee)?</p>
-<input id="i" type="number">
+<p>"Gauw terug en linksaf de Badweg op. Weer komen langs een fietsverhuur. Hoeveel fietsen staan hier buiten voor de zaak? Het gaat om eigenlijk alle soorten, maar niet het karretje."</p>
+<input id="i" type="number" placeholder="Aantal fietsen">
 <button onclick="calc3()">Bereken derde cijfer</button>
 </div>
 
@@ -107,26 +105,25 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 </div>
 
 <div class="step">
-<p>Aan het einde van de Badweg lopen we het strand op. Daar staat een bus. Welk nummer?</p>
-<input id="j" type="number">
+<p>"Nu gaan we einde Badweg het strand op. Blijkbaar kan dat ook. We slaan linksaf. Daar staat een bus. Welk nummer heeft de bus?"</p>
+<input id="j" type="number" placeholder="Busnummer">
 <button onclick="next()">Verder</button>
 </div>
 
 <div class="step">
-<p>Terug richting het dorp. Eerste mogelijkheid rechts. Op welk huisnummer wonen de dochters van Atlas en Pleione?</p>
-<input id="k" type="number">
+<p>"Verbaasd dat er een bus op het strand staat draaien we ons gauw om. Terug de Badweg op richting het dorp. De eerste mogelijkheid naar rechts. Aan deze weg schijnen de dochters van Atlas en Pleione te wonen. Op welk nummer?"</p>
+<input id="k" type="number" placeholder="Huisnummer dochters">
 <button onclick="next()">Verder</button>
 </div>
 
 <div class="step">
-<p>Een vrouw fietst met een Plus-tas. Welke slogan staat erop? Tel het aantal letters.</p>
-<input id="l" type="number">
+<p>"Weer terug naar de Badweg. Op weg naar het dorp komen we een volwassen man met een rood visnetje en een blote bast op een fiets tegen. Hij heeft waarschijnlijk vakantie. Zijn vrouw is ook lekker aan het fietsen en heeft een boodschappentas van Plus bij zich. Welke slogan staat er op haar tas? Tel de letters bij elkaar op."</p>
+<input id="l" type="number" placeholder="Aantal letters">
 <button onclick="calc4()">Bereken vierde cijfer</button>
 </div>
 
 <div class="step">
 <div class="calc" id="calc4"></div>
-<div id="code"></div>
 </div>
 
 </div>
@@ -160,11 +157,8 @@ function calc1(){
   const res=a+b-c;
   code.push(res);
   document.getElementById('calc1').innerHTML=
-`⭐ Sterren: ${a}<br>
-🪿 Ganzen: ${b}<br>
-🚩 Vlaggen: ${c}<br><br>
-➜ <strong>Eerste cijfer van de code: ${res}</strong><br>
-<em>Onthoud dit goed!</em>`;
+`Ik tel ${a} (sterren) en ${b} (ganzen) bij elkaar op en trek ${c} (vlaggen) eraf.<br>
+Dan krijg je <strong>${res}</strong>. Onthoud dit getal goed, dit is het eerste cijfer van de code.`;
   next();
 }
 
@@ -175,11 +169,8 @@ function calc2(){
   const res=d+f-e;
   code.push(res);
   document.getElementById('calc2').innerHTML=
-`👥 Mensen: ${d}<br>
-🧭 Instrument huisnummer: ${f}<br>
-🚪 Klos: ${e}<br><br>
-➜ <strong>Tweede cijfer van de code: ${res}</strong><br>
-<em>Onthoud dit goed!</em>`;
+`Ik tel ${d} (mensen terras) en ${f} (huisnummer instrument) bij elkaar op en trek ${e} (huisnummer klos) eraf.<br>
+Dan krijg je <strong>${res}</strong>. Onthoud dit getal goed, dit is het tweede cijfer van de code.`;
   next();
 }
 
@@ -190,11 +181,8 @@ function calc3(){
   const res=g+h-i;
   code.push(res);
   document.getElementById('calc3').innerHTML=
-`🐟 Vissen: ${g}<br>
-🏗️ Decennia bedrijf: ${h}<br>
-🚲 Fietsen: ${i}<br><br>
-➜ <strong>Derde cijfer van de code: ${res}</strong><br>
-<em>Onthoud dit goed!</em>`;
+`Ik tel ${g} (vissen) en ${h} (decennia) bij elkaar op en trek ${i} (fietsen) eraf.<br>
+Dan krijg je <strong>${res}</strong>. Onthoud dit getal goed, dit is het derde cijfer van de code.`;
   next();
 }
 
@@ -205,12 +193,8 @@ function calc4(){
   const res=j+k-l;
   code.push(res);
   document.getElementById('calc4').innerHTML=
-`🚌 Bus: ${j}<br>
-🏠 Dochters Atlas/Pleione huisnummer: ${k}<br>
-🛒 Letters Plus-slogan: ${l}<br><br>
-➜ <strong>Vierde cijfer van de code: ${res}</strong><br>
-<em>Onthoud dit goed!</em>`;
-  document.getElementById('code').innerHTML=`🎉 <strong>CODE: ${code.join(' ')}</strong>`;
+`Ik tel ${j} (bus) en ${k} (huisnummer dochters) bij elkaar op en trek ${l} (letters slogan) eraf.<br>
+Dan krijg je <strong>${res}</strong>. Onthoud dit getal goed, dit is het vierde cijfer van de code.`;
   document.getElementById('bus').style.opacity=1;
   moveEye(); moveEye();
   next();
