@@ -19,10 +19,18 @@ background:radial-gradient(circle, red 0%, rgba(255,0,0,0.4) 40%, transparent 70
 box-shadow:0 0 20px 8px rgba(255,0,0,0.4);
 opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:pulse 4s infinite;}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
-#bus{position:fixed;bottom:40px;left:-200px;font-size:3rem;opacity:1;}
-@keyframes busride {
-  0% { left: -200px; }
-  100% { left: 110%; }
+
+/* Voertuigen animatie */
+#vehicle{
+  position: fixed;
+  bottom: 40px;
+  left: -200px;
+  font-size: 3rem;
+  opacity: 1;
+}
+@keyframes vehicleRide{
+  0%{left:-200px;}
+  100%{left:110%;}
 }
 </style>
 </head>
@@ -138,7 +146,7 @@ opacity:0;pointer-events:none;transition:opacity 2s ease;z-index:9999;animation:
 
 </div>
 
-<div id="bus">🚌</div>
+<div id="vehicle">🚌</div>
 
 <script>
 let step=0;
@@ -206,18 +214,28 @@ function calc4(){
 `Ik tel ${j} (bus) en ${k} (huisnummer dochters) bij elkaar op en trek ${l} (letters slogan) eraf.<br>
 Dan krijg je <strong>${res}</strong>. Onthoud dit getal goed, dit is het vierde cijfer van de code.`;
 
-  // Toon Einde knop en activeer stap
   document.getElementById('endBtn').style.display='inline-block';
   steps[step].classList.remove('active');
   step++;
   steps[step].classList.add('active');
-
   moveEye(); moveEye();
 }
 
 function endGame(){
-  const bus=document.getElementById('bus');
-  bus.style.animation='busride 6s forwards';
+  const vehicle = document.getElementById('vehicle');
+
+  // Willekeurige keuze: bus of boot
+  const vehicles = ["🚌","🚍","🛳️","⛴️"];
+  vehicle.textContent = vehicles[Math.floor(Math.random()*vehicles.length)];
+
+  // Willekeurige kleur
+  const colors = ["red","orange","yellow","green","blue","purple"];
+  vehicle.style.color = colors[Math.floor(Math.random()*colors.length)];
+
+  // Herstart animatie zodat het elke keer kan
+  vehicle.style.animation = 'none';
+  vehicle.offsetHeight; // force reflow
+  vehicle.style.animation = 'vehicleRide 6s linear forwards';
 }
 </script>
 
